@@ -1,0 +1,59 @@
+{
+    "singup":{
+
+        "nome": "Tanjiro Kamado",
+        "cpf": "20504909096",
+        "email":"tanjiro.kamado@email.com",
+        "whatsapp":"11995003345",   
+        "endereco":{
+        "cep":"76987004",
+        "rua":"Rua Sergio Almir Carniel",
+        "numero":200,
+        "complemento":"Casa",
+        "bairro":"Jardim Eldorado",
+        "cidadeUF":"Vilhena/RO"
+    },
+        "metodo_entrega":"Moto",
+        "cnh":"cnh.jpg"
+    },
+
+
+    "cpf_incorreto":{
+
+        "nome": "Tanjiro Kamado",
+        "cpf": "999999222233JJ",
+        "email":"tanjiro.kamado@email.com",
+        "whatsapp":"11995003345",   
+        "endereco":{
+        "cep":"76987004",
+        "rua":"Rua Sergio Almir Carniel",
+        "numero":200,
+        "complemento":"Casa",
+        "bairro":"Jardim Eldorado",
+        "cidadeUF":"Vilhena/RO"
+    },
+        "metodo_entrega":"Moto",
+        "cnh":"cnh.jpg"
+    },
+
+
+    "email_inv":{
+
+        "nome": "Tanjiro Kamado",
+        "cpf": "20504909096",
+        "email":"tanjiro.kamado,email.com",
+        "whatsapp":"11995003345",   
+        "endereco":{
+        "cep":"76987004",
+        "rua":"Rua Sergio Almir Carniel",
+        "numero":200,
+        "complemento":"Casa",
+        "bairro":"Jardim Eldorado",
+        "cidadeUF":"Vilhena/RO"
+    },
+        "metodo_entrega":"Moto",
+        "cnh":"cnh.jpg"
+    }
+
+    
+}

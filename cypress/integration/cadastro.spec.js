@@ -3,32 +3,30 @@
 import SingUpPage from '../pages/SingUpPage';
 
 describe('Cadastro',()=> {
+    before(()=>{
+        cy.log('Tudo aqui é executado uma única vez ANTES DE TODOS os casos de teste');
+    });
+    
+    beforeEach(function(){
+        cy.fixture('delivery').then((d)=>{
+            this.deliver = d;
+        });
+    });
 
-    it('Cadastrar entregador',() => {     
+    after(()=>{
+        cy.log('Tudo aqui é executado uma única vez DEPOIS DE TODOS os casos de teste');
+    });
+
+    afterEach(()=>{
+        cy.log('Tudo aqui é executado uma única vez DEPOIS DE CADA  caso de teste');
+    });
+
+    it('Cadastrar entregador',function() {     
         
-
-         let deliver = {
-            nome: 'Tanjiro Kamado',
-            cpf: '20504909096',
-            email:'tanjiro.kamado@email.com',
-            whatsapp:'11995003345',   
-            endereco:{
-                cep:'76987004',
-                rua:'Rua Sergio Almir Carniel',
-                numero:200,
-                complemento:'Casa',
-                bairro:'Jardim Eldorado',
-                cidadeUF:'Vilhena/RO'
-            },
-            metodo_entrega:'Moto',
-            cnh:'cnh.jpg'
-
-         }
-
         let singup = new SingUpPage();
         
         singup.go();
-        singup.fillForm(deliver);
+        singup.fillForm(this.deliver.singup);
         singup.submit();
          
         singup.modalAlertShouldBe();       
@@ -39,58 +37,25 @@ describe('Cadastro',()=> {
 
     });
 
-    it('CPF incorreto', () => {
+    it('CPF incorreto', function() {
 
-        let deliver = {
-            nome: 'Daniel',
-            cpf: '000000414AA',
-            email: 'daniel@test.com',
-            whatsapp: '11999999999',
-            endereco:{
-                cep:'76987004',
-                rua:'Rua Sergio Almir Carniel',
-                numero:'200',
-                complemento:'Casa',
-                bairro:'Jardim Eldorado',
-                cidadeUF:'Vilhena/RO'
-            },
-            metodo_entrega:'Moto',
-            cnh:'cnh.jpg'
-        }
-
-        var singup = new SingUpPage();
+        let singup = new SingUpPage();
 
         singup.go();
-        singup.fillForm(deliver);
+        singup.fillForm(this.deliver.cpf_incorreto);
         singup.submit();
 
         singup.alertErrorShouldBe('Oops! CPF inválido')
     });
 
 
-    it.only('Email incorreto', () => {
+    it('Email incorreto', function(){
 
-        let deliver = {
-            nome: 'Daniel',
-            cpf: '00000041414',
-            email: 'daniel.test.com',
-            whatsapp: '11999999999',
-            endereco:{
-                cep:'76987004',
-                rua:'Rua Sergio Almir Carniel',
-                numero:'200',
-                complemento:'Casa',
-                bairro:'Jardim Eldorado',
-                cidadeUF:'Vilhena/RO'
-            },
-            metodo_entrega:'Moto',
-            cnh:'cnh.jpg'
-        }
-
-        var singup = new SingUpPage();
+   
+        let singup = new SingUpPage();
 
         singup.go();
-        singup.fillForm(deliver);
+        singup.fillForm(this.deliver.email_inv);
         singup.submit();
 
         singup.alertErrorShouldBe('Oops! Email com formato inválido.');
