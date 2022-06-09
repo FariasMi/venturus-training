@@ -1,0 +1,7 @@
+{
+    "watchForFileChanges":false,
+    "viewportWidth": 144,
+    "viewportHeight":900,
+    "baseURL":"https://buger-eats-qa.vercel.app"
+
+}
