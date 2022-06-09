@@ -55,10 +55,10 @@ describe('Cadastro',()=> {
                 cidadeUF:'Vilhena/RO'
             },
             metodo_entrega:'Moto',
-            cnh:'cnh-digital.jpg'
+            cnh:'cnh.jpg'
         }
 
-        var singup = new SingupPage();
+        var singup = new SingUpPage();
 
         singup.go();
         singup.fillForm(deliver);
@@ -84,16 +84,17 @@ describe('Cadastro',()=> {
                 cidadeUF:'Vilhena/RO'
             },
             metodo_entrega:'Moto',
-            cnh:'cnh-digital.jpg'
+            cnh:'cnh.jpg'
         }
 
-        var singup = new SingupPage();
+        var singup = new SingUpPage();
 
         singup.go();
         singup.fillForm(deliver);
         singup.submit();
 
-        singup.alertErrorShouldBe('Oops! Email com formato inválido.')
+        singup.alertErrorShouldBe('Oops! Email com formato inválido.');
+
     });
     
 });

@@ -34,6 +34,12 @@ class SingUpPage{
         
         cy.get('.swa12-container .swa12-html-container').should('have.text',expectedMessage);
     }
+
+
+    alertErrorShouldBe(expectedMessage){
+        cy.get('.alert-error').should('have.text', expectedMessage)
+    }
+
 }
 
 export default SingUpPage;
